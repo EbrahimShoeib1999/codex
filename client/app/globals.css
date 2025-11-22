@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -61,31 +47,18 @@
     --input: 0 0% 14.9%;
     --ring: 142 71% 45%;
   }
-}
 
-/* Brand Typography */
-@font-face {
-  font-family: 'Codex Sans';
-  src: url('/fonts/CodexSans-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Codex Sans';
-  src: url('/fonts/CodexSans-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Codex Sans';
-  src: url('/fonts/CodexSans-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+  }
 }
 
 /* Responsive Utilities */
@@ -118,21 +91,6 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* Base styles */
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Codex Sans', system-ui, sans-serif;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Codex Sans', system-ui, sans-serif;
-    font-weight: 700;
-  }
 }
 
 /* Dashboard Layout */

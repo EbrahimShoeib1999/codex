@@ -10,13 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'brand-lime': '#9DE43D',
-        'brand-white': '#FFFFFF',
-        'brand-black': '#070707',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: 'var(--brand-lime)',
+          DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
@@ -40,7 +37,7 @@ const config: Config = {
         ring: 'hsl(var(--ring))',
       },
       fontFamily: {
-        sans: ['Codex Sans', 'system-ui', 'sans-serif'],
+        sans: ['system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

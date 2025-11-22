@@ -5,8 +5,16 @@ import Image from "next/image";
 import { Users, Award, Clock, Target, CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { RootState } from "@/app/store/store";
+import { updateSection } from "@/app/store/slices/contentSlice";
+import { InlineEditor } from "@/components/dynamic-editor/InlineEditor";
 
 export default function AboutPage() {
+  const dispatch = useAppDispatch();
+  const { sections } = useAppSelector((state: RootState) => state.content);
+  const aboutSection = sections.about || {};
+  
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
@@ -26,6 +34,10 @@ export default function AboutPage() {
     }
   };
 
+  const handleUpdateSection = async (field: string, value: string) => {
+    await dispatch(updateSection({ id: 'about', data: { [field]: value } }));
+  };
+
   return (
     <div className="pt-24">
       {/* Hero Section */}
@@ -37,9 +49,20 @@ export default function AboutPage() {
             animate="visible"
             variants={fadeIn}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Codex</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <InlineEditor
+                value={aboutSection.title || "About Codex"}
+                onSave={(value) => handleUpdateSection('title', value)}
+                fieldName="title"
+              />
+            </h1>
             <p className="text-xl text-muted-foreground">
-              We are a team of passionate developers, designers, and digital strategists dedicated to creating exceptional software solutions.
+              <InlineEditor
+                value={aboutSection.subtitle || "We are a team of passionate developers, designers, and digital strategists dedicated to creating exceptional software solutions."}
+                onSave={(value) => handleUpdateSection('subtitle', value)}
+                fieldName="subtitle"
+                type="textarea"
+              />
             </p>
           </motion.div>
         </div>
@@ -58,13 +81,28 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Founded in 2015, Codex began with a simple mission: to help businesses leverage technology to achieve their goals. What started as a small team of three developers has grown into a full-service digital agency with expertise across multiple domains.
+                <InlineEditor
+                  value={aboutSection.storyPart1 || "Founded in 2015, Codex began with a simple mission: to help businesses leverage technology to achieve their goals. What started as a small team of three developers has grown into a full-service digital agency with expertise across multiple domains."}
+                  onSave={(value) => handleUpdateSection('storyPart1', value)}
+                  fieldName="storyPart1"
+                  type="textarea"
+                />
               </p>
               <p className="text-lg text-muted-foreground mb-6">
-                Over the years, we've worked with startups, SMEs, and enterprise clients across various industries, delivering solutions that drive growth and innovation. Our approach combines technical excellence with a deep understanding of business needs.
+                <InlineEditor
+                  value={aboutSection.storyPart2 || "Over the years, we've worked with startups, SMEs, and enterprise clients across various industries, delivering solutions that drive growth and innovation. Our approach combines technical excellence with a deep understanding of business needs."}
+                  onSave={(value) => handleUpdateSection('storyPart2', value)}
+                  fieldName="storyPart2"
+                  type="textarea"
+                />
               </p>
               <p className="text-lg text-muted-foreground">
-                Today, we continue to push the boundaries of what's possible in software development, always staying ahead of the curve with emerging technologies and methodologies.
+                <InlineEditor
+                  value={aboutSection.storyPart3 || "Today, we continue to push the boundaries of what's possible in software development, always staying ahead of the curve with emerging technologies and methodologies."}
+                  onSave={(value) => handleUpdateSection('storyPart3', value)}
+                  fieldName="storyPart3"
+                  type="textarea"
+                />
               </p>
             </motion.div>
             
@@ -132,28 +170,28 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold mb-4">Our Values</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-lime-500 mt-1 flex-shrink-0" />
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div className="ml-4">
                     <h4 className="text-xl font-semibold">Excellence</h4>
                     <p className="text-muted-foreground">We strive for excellence in everything we do, from code quality to client communication.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-lime-500 mt-1 flex-shrink-0" />
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div className="ml-4">
                     <h4 className="text-xl font-semibold">Innovation</h4>
                     <p className="text-muted-foreground">We embrace new technologies and creative approaches to solve complex problems.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-lime-500 mt-1 flex-shrink-0" />
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div className="ml-4">
                     <h4 className="text-xl font-semibold">Integrity</h4>
                     <p className="text-muted-foreground">We operate with honesty, transparency, and ethical standards in all our interactions.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-lime-500 mt-1 flex-shrink-0" />
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div className="ml-4">
                     <h4 className="text-xl font-semibold">Collaboration</h4>
                     <p className="text-muted-foreground">We believe in the power of teamwork and partnership to achieve exceptional results.</p>
@@ -177,22 +215,22 @@ export default function AboutPage() {
           >
             {[
               {
-                icon: <Users className="h-10 w-10 text-lime-500" />,
+                icon: <Users className="h-10 w-10 text-primary" />,
                 number: "30+",
                 label: "Team Members"
               },
               {
-                icon: <Award className="h-10 w-10 text-lime-500" />,
+                icon: <Award className="h-10 w-10 text-primary" />,
                 number: "100+",
                 label: "Projects Completed"
               },
               {
-                icon: <Clock className="h-10 w-10 text-lime-500" />,
+                icon: <Clock className="h-10 w-10 text-primary" />,
                 number: "8+",
                 label: "Years of Experience"
               },
               {
-                icon: <Target className="h-10 w-10 text-lime-500" />,
+                icon: <Target className="h-10 w-10 text-primary" />,
                 number: "50+",
                 label: "Happy Clients"
               }
@@ -268,7 +306,7 @@ export default function AboutPage() {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-lime-500 font-medium mb-4">{member.role}</p>
+                    <p className="text-primary font-medium mb-4">{member.role}</p>
                     <p className="text-muted-foreground">{member.bio}</p>
                   </CardContent>
                 </Card>

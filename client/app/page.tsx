@@ -20,7 +20,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Navbar from "@/components/navbar";
 
 export default function Home() {
   const fadeIn = {
@@ -57,13 +56,13 @@ export default function Home() {
             >
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Transforming Ideas Into <span className="text-lime-500">Digital Excellence</span>
+                Transforming Ideas Into <span className="text-primary">Digital Excellence</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
                 We're a team of expert developers and designers crafting innovative software solutions that drive business growth and user engagement.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-lime-500 hover:bg-lime-600">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                   <Link href="/contact">Start Your Project</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
@@ -106,8 +105,8 @@ export default function Home() {
                 />
                 <div className="absolute -bottom-6 -left-6 bg-background p-4 rounded-lg shadow-lg">
                   <div className="flex items-center gap-3">
-                    <div className="bg-lime-500/10 p-2 rounded-full">
-                      <Award className="h-6 w-6 text-lime-500" />
+                    <div className="bg-primary/10 p-2 rounded-full">
+                      <Award className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <div className="font-semibold">Trusted by 500+</div>
@@ -140,17 +139,17 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <Shield className="h-10 w-10 text-lime-500" />,
+                icon: <Shield className="h-10 w-10 text-primary" />,
                 title: "Our Mission",
                 description: "To empower businesses through innovative technology solutions that solve real-world problems."
               },
               {
-                icon: <Target className="h-10 w-10 text-lime-500" />,
+                icon: <Target className="h-10 w-10 text-primary" />,
                 title: "Our Vision",
                 description: "To be the leading force in digital transformation, setting new standards in software development."
               },
               {
-                icon: <Award className="h-10 w-10 text-lime-500" />,
+                icon: <Award className="h-10 w-10 text-primary" />,
                 title: "Our Values",
                 description: "Excellence, innovation, and integrity in everything we do, putting our clients' success first."
               }
@@ -164,7 +163,7 @@ export default function Home() {
                 className="text-center"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-lime-500/10 rounded-full">
+                  <div className="p-3 bg-primary/10 rounded-full">
                     {item.icon}
                   </div>
                 </div>
@@ -201,7 +200,7 @@ export default function Home() {
           >
             {[
               {
-                icon: <Code className="h-10 w-10 text-lime-500" />,
+                icon: <Code className="h-10 w-10 text-primary" />,
                 title: "Web Development",
                 description: "Custom websites and web applications built with cutting-edge technologies",
                 features: [
@@ -212,7 +211,7 @@ export default function Home() {
                 ]
               },
               {
-                icon: <Smartphone className="h-10 w-10 text-lime-500" />,
+                icon: <Smartphone className="h-10 w-10 text-primary" />,
                 title: "Mobile Apps",
                 description: "Native and cross-platform mobile applications for iOS and Android",
                 features: [
@@ -223,7 +222,7 @@ export default function Home() {
                 ]
               },
               {
-                icon: <Palette className="h-10 w-10 text-lime-500" />,
+                icon: <Palette className="h-10 w-10 text-primary" />,
                 title: "UI/UX Design",
                 description: "User-centered design that enhances engagement and satisfaction",
                 features: [
@@ -234,7 +233,7 @@ export default function Home() {
                 ]
               },
               {
-                icon: <TrendingUp className="h-10 w-10 text-lime-500" />,
+                icon: <TrendingUp className="h-10 w-10 text-primary" />,
                 title: "Digital Marketing",
                 description: "Strategic marketing to increase your online presence",
                 features: [
@@ -248,7 +247,7 @@ export default function Home() {
               <motion.div key={index} variants={fadeIn}>
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
-                    <div className="mb-4 p-3 bg-lime-500/10 rounded-full w-fit">
+                    <div className="mb-4 p-3 bg-primary/10 rounded-full w-fit">
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{service.title}</h3>
@@ -256,7 +255,7 @@ export default function Home() {
                     <ul className="space-y-2">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-lime-500" />
+                          <CheckCircle2 className="h-4 w-4 text-primary" />
                           <span className="text-sm">{feature}</span>
                         </li>
                       ))}
@@ -331,7 +330,7 @@ export default function Home() {
                     />
                   </div>
                   <CardContent className="p-6">
-                    <div className="text-sm text-lime-500 font-medium mb-2">
+                    <div className="text-sm text-primary font-medium mb-2">
                       {project.category}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
@@ -349,7 +348,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-lime-500 hover:bg-lime-600">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="/portfolio">View All Projects</Link>
             </Button>
           </div>
@@ -375,25 +374,25 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <Users className="h-10 w-10 text-lime-500" />,
+                icon: <Users className="h-10 w-10 text-primary" />,
                 step: "01",
                 title: "Discovery",
                 description: "We start by understanding your business goals and project requirements"
               },
               {
-                icon: <Palette className="h-10 w-10 text-lime-500" />,
+                icon: <Palette className="h-10 w-10 text-primary" />,
                 step: "02",
                 title: "Design",
                 description: "Creating intuitive interfaces and user experiences"
               },
               {
-                icon: <Code className="h-10 w-10 text-lime-500" />,
+                icon: <Code className="h-10 w-10 text-primary" />,
                 step: "03",
                 title: "Development",
                 description: "Building your solution using cutting-edge technologies"
               },
               {
-                icon: <Zap className="h-10 w-10 text-lime-500" />,
+                icon: <Zap className="h-10 w-10 text-primary" />,
                 step: "04",
                 title: "Launch",
                 description: "Deploying and ensuring everything runs smoothly"
@@ -409,10 +408,10 @@ export default function Home() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
-                    <div className="absolute top-6 right-6 text-4xl font-bold text-lime-500/10">
+                    <div className="absolute top-6 right-6 text-4xl font-bold text-primary/10">
                       {step.step}
                     </div>
-                    <div className="mb-4 p-3 bg-lime-500/10 rounded-full w-fit">
+                    <div className="mb-4 p-3 bg-primary/10 rounded-full w-fit">
                       {step.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
@@ -506,22 +505,22 @@ export default function Home() {
           >
             {[
               {
-                icon: <Users className="h-10 w-10 text-lime-500" />,
+                icon: <Users className="h-10 w-10 text-primary" />,
                 number: "500+",
                 label: "Happy Clients"
               },
               {
-                icon: <Award className="h-10 w-10 text-lime-500" />,
+                icon: <Award className="h-10 w-10 text-primary" />,
                 number: "100+",
                 label: "Projects Completed"
               },
               {
-                icon: <Clock className="h-10 w-10 text-lime-500" />,
+                icon: <Clock className="h-10 w-10 text-primary" />,
                 number: "8+",
                 label: "Years Experience"
               },
               {
-                icon: <Target className="h-10 w-10 text-lime-500" />,
+                icon: <Target className="h-10 w-10 text-primary" />,
                 number: "50+",
                 label: "Team Members"
               }
@@ -529,7 +528,7 @@ export default function Home() {
               <motion.div key={index} variants={fadeIn}>
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardContent className="p-6 flex flex-col items-center text-center">
-                    <div className="mb-4 p-3 bg-lime-500/10 rounded-full">
+                    <div className="mb-4 p-3 bg-primary/10 rounded-full">
                       {stat.icon}
                     </div>
                     <h3 className="text-3xl font-bold mb-2">{stat.number}</h3>
@@ -628,7 +627,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-lime-500">
+      <section className="py-20 bg-primary">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center"
@@ -637,15 +636,15 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Ready to Transform Your Business?</h2>
-            <p className="text-lg text-black/80 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">Ready to Transform Your Business?</h2>
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
               Let's discuss how we can help bring your vision to life with our expertise in design and development.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild size="lg" variant="default" className="bg-black text-white hover:bg-black/80">
+              <Button asChild size="lg" variant="default" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                 <Link href="/contact">Start Your Project</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/10 border-black text-black hover:bg-white/20">
+              <Button asChild size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20">
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </div>

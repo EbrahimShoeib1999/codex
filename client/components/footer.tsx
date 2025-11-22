@@ -12,23 +12,23 @@ export default function Footer() {
               Transforming ideas into exceptional digital experiences with cutting-edge technology and innovative solutions.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-lime-500 transition-colors">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-lime-500 transition-colors">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Twitter size={20} />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-lime-500 transition-colors">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-lime-500 transition-colors">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-lime-500 transition-colors">
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github size={20} />
                 <span className="sr-only">GitHub</span>
               </Link>
@@ -39,27 +39,27 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
                   FAQ
                 </Link>
               </li>
@@ -70,32 +70,32 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#web-development" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/services#web-development" className="text-muted-foreground hover:text-primary transition-colors">
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services#mobile-apps" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/services#mobile-apps" className="text-muted-foreground hover:text-primary transition-colors">
                   Mobile Applications
                 </Link>
               </li>
               <li>
-                <Link href="/services#ui-ux" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/services#ui-ux" className="text-muted-foreground hover:text-primary transition-colors">
                   UI/UX Design
                 </Link>
               </li>
               <li>
-                <Link href="/services#digital-marketing" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/services#digital-marketing" className="text-muted-foreground hover:text-primary transition-colors">
                   Digital Marketing
                 </Link>
               </li>
               <li>
-                <Link href="/services#consulting" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/services#consulting" className="text-muted-foreground hover:text-primary transition-colors">
                   IT Consulting
                 </Link>
               </li>
               <li>
-                <Link href="/dashboard" className="text-muted-foreground hover:text-lime-500 transition-colors">
+                <Link href="/dashboard" className="text-muted-foreground hover:text-primary transition-colors">
                   Dashboard
                 </Link>
               </li>
@@ -106,17 +106,17 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <MapPin size={20} className="text-lime-500 mt-1 flex-shrink-0" />
+                <MapPin size={20} className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-muted-foreground">
                   123 Tech Avenue, Silicon Valley, CA 94043, USA
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone size={20} className="text-lime-500 flex-shrink-0" />
+                <Phone size={20} className="text-primary flex-shrink-0" />
                 <span className="text-muted-foreground">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail size={20} className="text-lime-500 flex-shrink-0" />
+                <Mail size={20} className="text-primary flex-shrink-0" />
                 <span className="text-muted-foreground">info@codextech.com</span>
               </li>
             </ul>
@@ -128,13 +128,13 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Codex. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-lime-500 transition-colors">
+            <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="text-sm text-muted-foreground hover:text-lime-500 transition-colors">
+            <Link href="/terms-of-service" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Terms of Service
             </Link>
-            <Link href="/cookies-policy" className="text-sm text-muted-foreground hover:text-lime-500 transition-colors">
+            <Link href="/cookies-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Cookies Policy
             </Link>
           </div>

@@ -91,7 +91,11 @@ export default function DashboardLayout({
         </div>
       </ScrollArea>
       <div className="border-t p-4">
-        <Button variant="outline" className="w-full justify-start gap-2">
+        <Button 
+          variant="outline" 
+          className="w-full justify-start gap-2"
+          onClick={() => router.push('/')}
+        >
           <LogOut className="h-4 w-4" />
           Logout
         </Button>

@@ -11,13 +11,13 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/support", label: "Support" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
+  { href: "/landing/about", label: "About Us" },
+  { href: "/landing/services", label: "Services" },
+  { href: "/landing/portfolio", label: "Portfolio" },
+  { href: "/landing/pricing", label: "Pricing" },
+  { href: "/landing/support", label: "Support" },
+  { href: "/landing/faq", label: "FAQ" },
+  { href: "/landing/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -54,11 +54,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <Image
-  src="/logo.PNG"
-  alt="Codex Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
+              src="/icon.jpeg"
+              alt="Codex Logo"
+              width={200}
+              height={200}
+              className="h-20 w-auto"
             />
           </Link>
 
@@ -68,9 +68,9 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-lime-500 ${
+                className={`text-sm font-medium transition-colors hover:text-primary ${
                   pathname === link.href
-                    ? "text-lime-500"
+                    ? "text-primary"
                     : "text-foreground/80"
                 }`}
               >
@@ -78,7 +78,7 @@ export default function Navbar() {
               </Link>
             ))}
             <ModeToggle />
-            <Button asChild variant="default" className="bg-lime-500 hover:bg-lime-600 text-white">
+            <Button asChild variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="/contact">Get Started</Link>
             </Button>
           </nav>
@@ -114,9 +114,9 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-lg font-medium transition-colors hover:text-lime-500 ${
+                  className={`text-lg font-medium transition-colors hover:text-primary ${
                     pathname === link.href
-                      ? "text-lime-500"
+                      ? "text-primary"
                       : "text-foreground/80"
                   }`}
                   onClick={() => setIsOpen(false)}
@@ -124,7 +124,7 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild variant="default" className="bg-lime-500 hover:bg-lime-600 text-white w-full mt-4">
+              <Button asChild variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-4">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
                   Get Started
                 </Link>
