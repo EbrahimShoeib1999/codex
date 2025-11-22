@@ -157,7 +157,7 @@ export function ImageManager() {
           <Button
             onClick={() => fileInputRef.current?.click()}
             disabled={isUploading}
-            className="bg-lime-500 hover:bg-lime-600"
+            className="bg-primary hover:bg-primary/90"
           >
             <Upload className="h-4 w-4 mr-2" />
             {isUploading ? "جاري الرفع..." : "رفع صور"}
@@ -176,7 +176,7 @@ export function ImageManager() {
             </p>
             <Button
               onClick={() => fileInputRef.current?.click()}
-              className="bg-lime-500 hover:bg-lime-600"
+              className="bg-primary hover:bg-primary/90"
             >
               <Upload className="h-4 w-4 mr-2" />
               رفع صور

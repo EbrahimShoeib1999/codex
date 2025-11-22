@@ -25,7 +25,7 @@ export function ContentCard({ item, contentType, onEdit, onDelete }: ContentCard
                   {item.description || item.answer || item.subtitle}
         </p>
         {contentType === 'pricing' && (
-          <p className="text-lime-600 font-medium mt-2">
+          <p className="text-primary font-medium mt-2">
             ${item.monthlyPrice} / شهر
           </p>
         )}
@@ -42,7 +42,7 @@ export function ContentCard({ item, contentType, onEdit, onDelete }: ContentCard
           <Button
             variant="ghost"
             size="sm"
-            className="text-red-500 hover:text-red-700"
+            className="text-destructive hover:text-destructive/90"
             onClick={() => onDelete(item.id)}
           >
             <Trash2 className="h-4 w-4" />

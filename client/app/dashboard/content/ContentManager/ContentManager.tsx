@@ -240,7 +240,7 @@ export function ContentManager({ contentType }: ContentManagerProps) {
       {/* Search and Actions Bar */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-lime-100 dark:bg-lime-900/30 rounded-full">
+          <div className="p-2 bg-primary/10 dark:bg-primary/30 rounded-full">
             {getIcon()}
           </div>
           <div>
@@ -260,7 +260,7 @@ export function ContentManager({ contentType }: ContentManagerProps) {
           />
           {contentType !== 'sections' && (
             <Button 
-              className="bg-lime-500 hover:bg-lime-600"
+              className="bg-primary hover:bg-primary/90"
               onClick={() => setIsCreating(true)}
             >
               <Plus className="h-4 w-4 mr-2" />
@@ -272,7 +272,7 @@ export function ContentManager({ contentType }: ContentManagerProps) {
 
       {loading && (
         <div className="flex justify-center items-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-lime-500"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
         </div>
       )}
 
@@ -307,7 +307,7 @@ export function ContentManager({ contentType }: ContentManagerProps) {
                 <div className="flex gap-2">
                   <Button 
                     onClick={handleCreate}
-                    className="bg-lime-500 hover:bg-lime-600"
+                    className="bg-primary hover:bg-primary/90"
                     size="sm"
                   >
                     <Save className="h-4 w-4 mr-2" />
@@ -375,7 +375,7 @@ export function ContentManager({ contentType }: ContentManagerProps) {
                       <div className="flex gap-2">
                         <Button 
                           onClick={() => handleSave(item.id)}
-                          className="bg-lime-500 hover:bg-lime-600"
+                          className="bg-primary hover:bg-primary/90"
                           size="sm"
                         >
                           <Save className="h-4 w-4 mr-2" />
@@ -401,7 +401,7 @@ export function ContentManager({ contentType }: ContentManagerProps) {
                           {item.description || item.answer || item.subtitle}
                         </p>
                         {contentType === 'pricing' && (
-                          <p className="text-lime-600 font-medium mt-2">
+                          <p className="text-primary font-medium mt-2">
                             ${item.monthlyPrice} / month
                           </p>
                         )}
@@ -418,7 +418,7 @@ export function ContentManager({ contentType }: ContentManagerProps) {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-red-500 hover:text-red-700"
+                            className="text-destructive hover:text-destructive/90"
                             onClick={() => handleDelete(item.id)}
                           >
                             <Trash2 className="h-4 w-4" />

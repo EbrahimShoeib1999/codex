@@ -108,12 +108,12 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  123 Tech Avenue, Silicon Valley, CA 94043, USA
+                  New Damitta City, Egypt
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">+201271138683</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-primary flex-shrink-0" />

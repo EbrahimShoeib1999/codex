@@ -47,7 +47,7 @@ export function ContentForm({
           <div className="flex gap-2">
             <Button 
               onClick={onSave}
-              className="bg-lime-500 hover:bg-lime-600"
+              className="bg-primary hover:bg-primary/90"
               size="sm"
             >
               <Save className="h-4 w-4 mr-2" />

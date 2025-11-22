@@ -9,14 +9,29 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Users,
-  FileText,
-  Eye,
-  MessageSquare,
-  TrendingUp,
   ArrowUpRight,
   ArrowDownRight,
+  Users,
+  Eye,
+  FileText,
+  MessageSquare,
+  TrendingUp
 } from "lucide-react";
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  Cell
+} from "recharts";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 export default function DashboardPage() {
   const stats = [
@@ -50,6 +65,31 @@ export default function DashboardPage() {
     },
   ];
 
+  const incomeData = [
+    { month: "Jan", income: 4000 },
+    { month: "Feb", income: 3000 },
+    { month: "Mar", income: 5000 },
+    { month: "Apr", income: 4500 },
+    { month: "May", income: 6000 },
+    { month: "Jun", income: 5500 },
+  ];
+
+  const projectStatusData = [
+    { name: "Completed", count: 20 },
+    { name: "In Progress", count: 12 },
+    { name: "Pending", count: 8 },
+    { name: "On Hold", count: 3 },
+  ];
+
+  const customerGrowthData = [
+    { month: "Jan", newCustomers: 10 },
+    { month: "Feb", newCustomers: 15 },
+    { month: "Mar", newCustomers: 20 },
+    { month: "Apr", newCustomers: 12 },
+    { month: "May", newCustomers: 25 },
+    { month: "Jun", newCustomers: 18 },
+  ];
+
   return (
     <div className="space-y-8">
       <div>
@@ -59,11 +99,13 @@ export default function DashboardPage() {
         </p>
       </div>
 
+      {/* Stats Cards */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           const TrendIcon = stat.trend === "up" ? ArrowUpRight : ArrowDownRight;
-          const trendColor = stat.trend === "up" ? "text-green-500" : "text-red-500";
+          const trendColor =
+            stat.trend === "up" ? "text-green-500" : "text-red-500";
 
           return (
             <motion.div
@@ -82,9 +124,7 @@ export default function DashboardPage() {
                 <CardContent>
                   <div className="text-2xl font-bold">{stat.value}</div>
                   <div className="flex items-center pt-1">
-                    <TrendIcon
-                      className={`mr-1 h-4 w-4 ${trendColor}`}
-                    />
+                    <TrendIcon className={`mr-1 h-4 w-4 ${trendColor}`} />
                     <p className={`text-xs ${trendColor}`}>
                       {stat.change} from last month
                     </p>
@@ -96,6 +136,7 @@ export default function DashboardPage() {
         })}
       </div>
 
+      {/* Recent Activity & Website Performance */}
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -192,6 +233,105 @@ export default function DashboardPage() {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Charts */}
+      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        
+        {/* Income Overview */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Income Overview</CardTitle>
+            <CardDescription>Monthly income for the last 6 months.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ChartContainer
+              config={{ income: { label: "Income", color: "hsl(var(--primary))" } }}
+              className="h-[250px] w-full"
+            >
+              <LineChart data={incomeData} margin={{ left: 12, right: 12 }}>
+                <CartesianGrid vertical={false} />
+                <XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+                <YAxis tickLine={false} axisLine={false} tickMargin={8} />
+                <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                <Line
+                  dataKey="income"
+                  type="natural"
+                  stroke="hsl(var(--primary))"
+                  strokeWidth={2}
+                  dot={false}
+                />
+              </LineChart>
+            </ChartContainer>
+          </CardContent>
+        </Card>
+
+        {/* Project Status PieChart */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Project Status</CardTitle>
+            <CardDescription>Distribution of projects by status.</CardDescription>
+          </CardHeader>
+          <CardContent className="flex items-center justify-center">
+            <ChartContainer
+              config={{ count: { label: "Projects" } }}
+              className="h-[250px] w-full"
+            >
+              <PieChart>
+                <Pie
+                  data={projectStatusData}
+                  dataKey="count"
+                  nameKey="name"
+                  innerRadius={60}
+                  outerRadius={80}
+                  label
+                >
+                  {projectStatusData.map((_, i) => (
+                    <Cell
+                      key={i}
+                      fill={`hsl(var(--primary))`}
+                      opacity={(i + 1) / 4}
+                    />
+                  ))}
+                </Pie>
+                <ChartTooltip content={<ChartTooltipContent nameKey="name" />} />
+                <Legend />
+              </PieChart>
+            </ChartContainer>
+          </CardContent>
+        </Card>
+
+        {/* Customer Growth */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Customer Growth</CardTitle>
+            <CardDescription>New customers added each month.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ChartContainer
+              config={{
+                newCustomers: {
+                  label: "New Customers",
+                  color: "hsl(var(--accent))",
+                },
+              }}
+              className="h-[250px] w-full"
+            >
+              <BarChart data={customerGrowthData} margin={{ left: 12, right: 12 }}>
+                <CartesianGrid vertical={false} />
+                <XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+                <YAxis tickLine={false} axisLine={false} tickMargin={8} />
+                <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                <Bar
+                  dataKey="newCustomers"
+                  fill="hsl(var(--accent))"
+                  radius={[4, 4, 0, 0]}
+                />
+              </BarChart>
+            </ChartContainer>
+          </CardContent>
+        </Card>
+
       </div>
     </div>
   );

@@ -157,16 +157,16 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
     }
   }
 
-  const getStatusColor = (status: string) => {
+  const getStatusVariant = (status: string) => {
     switch (status) {
       case "completed":
-        return "bg-green-500";
+        return "success";
       case "in-progress":
-        return "bg-blue-500";
+        return "info";
       case "planned":
-        return "bg-orange-500";
+        return "outline";
       default:
-        return "bg-gray-500";
+        return "outline";
     }
   };
 
@@ -414,7 +414,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                   <Button 
                     type="submit" 
                     disabled={isLoading}
-                    className="bg-lime-500 hover:bg-lime-600"
+                    className="bg-primary hover:bg-primary/90"
                   >
                     {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     Save Changes
@@ -451,7 +451,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                       href={project.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-lime-500 hover:underline flex items-center"
+                      className="text-primary hover:underline flex items-center"
                     >
                       View Project <ExternalLink className="ml-1 h-4 w-4" />
                     </a>
@@ -527,7 +527,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                     className="flex items-center justify-between p-4 rounded-lg border"
                   >
                     <span>{task.title}</span>
-                    <Badge className={getStatusColor(task.status)}>
+                    <Badge variant={getStatusVariant(task.status)}>
                       {task.status}
                     </Badge>
                   </div>

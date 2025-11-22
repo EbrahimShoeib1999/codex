@@ -24,6 +24,11 @@
     --input: 0 0% 89.8%;
     --ring: 142 71% 45%;
     --radius: 0.5rem;
+
+    --success: 120 70% 40%;
+    --success-foreground: 0 0% 100%;
+    --info: 210 90% 50%;
+    --info-foreground: 0 0% 100%;
   }
 
   .dark {
@@ -46,6 +51,11 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 142 71% 45%;
+
+    --success: 120 70% 40%; /* Example: a darker green for success in dark mode */
+    --success-foreground: 0 0% 100%;
+    --info: 210 90% 50%; /* Example: a slightly muted blue for info in dark mode */
+    --info-foreground: 0 0% 100%;
   }
 
   * {

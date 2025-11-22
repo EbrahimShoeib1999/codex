@@ -123,7 +123,7 @@ export default function LoginPage() {
 
               <Button
                 type="submit"
-                className="w-full bg-lime-500 hover:bg-lime-600"
+                className="w-full bg-primary hover:bg-primary/90"
                 disabled={isLoading}
               >
                 {isLoading && (
@@ -137,7 +137,7 @@ export default function LoginPage() {
           <div className="mt-6 text-center text-sm">
             <a
               href="#"
-              className="text-lime-500 hover:text-lime-600 hover:underline"
+              className="text-primary hover:text-primary/90 hover:underline"
             >
               Forgot your password?
             </a>

@@ -306,7 +306,7 @@ export default function CreateProjectPage() {
                 <Button 
                   type="submit" 
                   disabled={isLoading}
-                  className="bg-lime-500 hover:bg-lime-600"
+                  className="bg-primary hover:bg-primary/90"
                 >
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   Create Project

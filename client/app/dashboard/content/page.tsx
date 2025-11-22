@@ -2,30 +2,45 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion"; // Import motion
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ContentManager } from "./ContentManager/ContentManager";
 
 export default function ContentPage() {
   const [activeTab, setActiveTab] = useState("sections");
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
-    <div className="space-y-6">
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      className="section-padding space-y-6" // Use section-padding for consistent spacing
+    >
       <div>
-        <h1 className="text-3xl font-bold">Content Management</h1>
-        <p className="text-muted-foreground">
-          Manage all your website content from one place.
+        <h1 className="text-3xl md:text-4xl font-bold">إدارة المحتوى</h1> {/* Adjust heading size */}
+        <p className="text-lg text-muted-foreground"> {/* Adjust text size */}
+          إدارة جميع محتويات موقعك من مكان واحد
         </p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList className="flex flex-wrap gap-2">
-          <TabsTrigger value="sections">Sections</TabsTrigger>
-          <TabsTrigger value="projects">Projects</TabsTrigger>
-          <TabsTrigger value="services">Services</TabsTrigger>
-          <TabsTrigger value="pricing">Pricing Plans</TabsTrigger>
-          <TabsTrigger value="faqs">FAQs</TabsTrigger>
-          <TabsTrigger value="team">Team Members</TabsTrigger>
-          <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
+          <TabsTrigger value="sections">الأقسام</TabsTrigger>
+          <TabsTrigger value="projects">المشاريع</TabsTrigger>
+          <TabsTrigger value="services">الخدمات</TabsTrigger>
+          <TabsTrigger value="pricing">خطط الأسعار</TabsTrigger>
+          <TabsTrigger value="faqs">الأسئلة الشائعة</TabsTrigger>
+          <TabsTrigger value="team">أعضاء الفريق</TabsTrigger>
+          <TabsTrigger value="testimonials">آراء العملاء</TabsTrigger>
         </TabsList>
 
         <TabsContent value="sections">
@@ -56,6 +71,6 @@ export default function ContentPage() {
           <ContentManager contentType="testimonials" />
         </TabsContent>
       </Tabs>
-    </div>
+    </motion.section>
   );
 }

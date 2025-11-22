@@ -66,7 +66,7 @@ export default function DashboardLayout({
     <div className="flex h-full flex-col gap-4">
       <div className="flex h-14 items-center border-b px-4">
         <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
-          <span className="text-xl text-lime-500">CODEX</span>
+          <span className="text-xl text-primary">CODEX</span>
           <span>Dashboard</span>
         </Link>
       </div>

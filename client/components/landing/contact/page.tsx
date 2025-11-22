@@ -296,7 +296,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Phone</h3>
                     <p className="text-muted-foreground">
-                      +1 (555) 123-4567
+                      +20 1271138683
                     </p>
                   </div>
                 </div>
@@ -333,7 +333,7 @@ export default function ContactPage() {
                   For quick responses, you can also reach us on WhatsApp.
                 </p>
                 <Button asChild className="w-full bg-green-600 hover:bg-green-700">
-                  <Link href="https://wa.me/15551234567" target="_blank">
+                  <Link href="https://wa.me/1271138683" target="_blank">
                     <MessageSquare className="mr-2 h-4 w-4" /> Chat on WhatsApp
                   </Link>
                 </Button>
